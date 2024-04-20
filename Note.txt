@@ -1,0 +1,27 @@
+React Crash Course 2024 (https://www.youtube.com/watch?v=LDB4uaJ87e0)
+
+https://github.com/bradtraversy/react-crash-2024
+https://github.com/Annie-Huang/react-crash-2024
+
+------------------------------------------------------------------
+
+PS C:\react> npm create vite@latest react-crash-2024
+Need to install the following packages:
+  create-vite@latest
+Ok to proceed? (y) y
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'create-vite@5.2.3',
+npm WARN EBADENGINE   required: { node: '^18.0.0 || >=20.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '7.7.5' }
+npm WARN EBADENGINE }
+√ Select a framework: » React
+√ Select a variant: » TypeScript
+
+Scaffolding project in C:\react\react-crash-2024...
+
+Done. Now run:
+
+  cd react-crash-2024
+  npm install
+  npm run dev
+
