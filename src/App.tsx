@@ -1,6 +1,6 @@
-import Navbar from './components/Navbar.tsx';
+import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
-import HomeCards from './components/HomeCards.tsx';
+import { HomeCards } from './components/HomeCards.tsx';
 
 const App = () => {
   return (
