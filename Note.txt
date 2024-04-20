@@ -30,4 +30,7 @@ Done. Now run:
 -------------------
 
 PS C:\react\react-crash-2024> npm install -D tailwindcss postcss autoprefixer
+PS C:\react\react-crash-2024> npx tailwindcss init -p
+    Created Tailwind CSS config file: tailwind.config.js
+    Created PostCSS config file: postcss.config.js
 
