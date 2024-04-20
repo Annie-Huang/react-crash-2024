@@ -3,6 +3,8 @@ React Crash Course 2024 (https://www.youtube.com/watch?v=LDB4uaJ87e0)
 https://github.com/bradtraversy/react-crash-2024
 https://github.com/Annie-Huang/react-crash-2024
 
+https://tailwindcss.com/docs/guides/vite
+
 ------------------------------------------------------------------
 
 PS C:\react> npm create vite@latest react-crash-2024
@@ -24,4 +26,8 @@ Done. Now run:
   cd react-crash-2024
   npm install
   npm run dev
+
+-------------------
+
+PS C:\react\react-crash-2024> npm install -D tailwindcss postcss autoprefixer
 
