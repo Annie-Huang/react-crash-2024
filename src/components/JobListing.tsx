@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 type Job = {
   id: string;
@@ -13,6 +13,13 @@ export interface JobListingProps {
   job: Job;
 }
 export const JobListing: FC<JobListingProps> = ({ job }) => {
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  // In css, it is done with text-overflow:ellipsis
+  const description = showFullDescription
+    ? job.description
+    : job.description.substring(0, 90) + '...';
+
   return (
     <div className='bg-white rounded-xl shadow-md relative'>
       <div className='p-4'>
@@ -21,7 +28,7 @@ export const JobListing: FC<JobListingProps> = ({ job }) => {
           <h3 className='text-xl font-bold'>{job.title}</h3>
         </div>
 
-        <div className='mb-5'>{job.description}</div>
+        <div className='mb-5'>{description}</div>
 
         <h3 className='text-indigo-500 mb-2'>{job.salary} / Year</h3>
 
