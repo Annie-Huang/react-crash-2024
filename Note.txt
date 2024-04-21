@@ -35,3 +35,4 @@ PS C:\react\react-crash-2024> npx tailwindcss init -p
     Created PostCSS config file: postcss.config.js
 
 PS C:\react\react-crash-2024> npm i react-icons     <-- font awesome icon, material ui icon
+PS C:\react\react-crash-2024> npm i react-router-dom
