@@ -9,6 +9,9 @@ https://www.davidhu.io/react-spinners/
 https://www.npmjs.com/package/react-spinners
 https://vitejs.dev/config/server-options.html#server-proxy
 
+https://reactrouter.com/en/main/route/loader
+https://reactrouter.com/en/main/hooks/use-loader-data
+
 ------------------------------------------------------------------
 
 PS C:\react> npm create vite@latest react-crash-2024
