@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-type Job = {
+export type Job = {
   id: string;
   type: string;
   title: string;
