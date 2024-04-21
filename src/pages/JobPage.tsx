@@ -16,6 +16,14 @@ export const jobLoader = async ({ params }: LoaderFunctionArgs) => {
   return data;
 };
 
+export const JobPage = () => {
+  // const { id } = useParams();
+  // https://reactrouter.com/en/main/hooks/use-loader-data
+  const job = useLoaderData() as Job;
+
+  return <h1>{job?.title}</h1>;
+};
+
 /*export const JobPage = () => {
   const { id } = useParams();
   const [job, setJob] = useState<Job | null>(null);
@@ -40,13 +48,5 @@ export const jobLoader = async ({ params }: LoaderFunctionArgs) => {
 
   return loading ? <Spinner loading={loading} /> : <h1>{job?.title}</h1>;
 };*/
-
-export const JobPage = () => {
-  // const { id } = useParams();
-  // https://reactrouter.com/en/main/hooks/use-loader-data
-  const job = useLoaderData() as Job;
-
-  return <h1>{job?.title}</h1>;
-};
 
 // export {JobPage as default, jobLoader}
