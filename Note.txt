@@ -5,6 +5,8 @@ https://github.com/Annie-Huang/react-crash-2024
 
 https://tailwindcss.com/docs/guides/vite
 https://www.npmjs.com/package/json-server
+https://www.davidhu.io/react-spinners/
+https://www.npmjs.com/package/react-spinners
 
 ------------------------------------------------------------------
 
@@ -38,6 +40,7 @@ PS C:\react\react-crash-2024> npx tailwindcss init -p
 PS C:\react\react-crash-2024> npm i react-icons     <-- font awesome icon, material ui icon
 PS C:\react\react-crash-2024> npm i react-router-dom
 PS C:\react\react-crash-2024> npm install -D json-server
+PS C:\react\react-crash-2024> npm i react-spinners
 
 
 PS C:\react\react-crash-2024> npm run dev

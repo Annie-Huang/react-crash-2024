@@ -1,4 +1,4 @@
-import jobs from '../jobs.json';
+// import jobs from '../jobs.json';
 import { Job, JobListing } from './JobListing.tsx';
 import { FC, useEffect, useState } from 'react';
 
