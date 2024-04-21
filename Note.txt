@@ -36,3 +36,22 @@ PS C:\react\react-crash-2024> npx tailwindcss init -p
 
 PS C:\react\react-crash-2024> npm i react-icons     <-- font awesome icon, material ui icon
 PS C:\react\react-crash-2024> npm i react-router-dom
+
+
+<a> vs <Link> vs <NavLink>
+    {/* <a> will do a whole page refresh
+    <a
+      href='/'
+      className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+    >
+    <Link> cannot detect whether the current link is active or not.
+    <Link
+      to='/'
+      className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+    >*/}
+
+    const linkClassDefault = 'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2';
+    const linkClass = ({ isActive }: { isActive: boolean }) => isActive ? `bg-black ${linkClassDefault}` : linkClassDefault;
+    <NavLink to='/' className={linkClass}>
+      Home
+    </NavLink>
