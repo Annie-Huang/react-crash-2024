@@ -1,7 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Job } from '../components/JobListing.tsx';
-import { useParams } from 'react-router-dom';
+import { LoaderFunctionArgs, useParams } from 'react-router-dom';
 import { Spinner } from '../components/Spinner.tsx';
+
+// export type JobLoaderParams = { params: { id: string } };
+// (args: LoaderFunctionArgs<any>) => DataFunctionValue | Promise<DataFunctionValue>
+/*export const jobLoader = async ({
+  params,
+}: LoaderFunctionArgs<JobLoaderParams>) => {*/
+
+export const jobLoader = async ({ params }: LoaderFunctionArgs) => {
+  const response = await fetch(`/api/jobs/${params.id}`);
+  const data = await response.json();
+  return data;
+};
 
 export const JobPage = () => {
   const { id } = useParams();
@@ -27,3 +39,5 @@ export const JobPage = () => {
 
   return loading ? <Spinner loading={loading} /> : <h1>{job?.title}</h1>;
 };
+
+// export {JobPage as default, jobLoader}
