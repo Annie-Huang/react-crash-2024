@@ -17,7 +17,9 @@ export const JobListings: FC<JobListingsProps> = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = `http://localhost:5000/jobs${isHome ? '?_limit=3' : ''}`;
+      // If your app is created with create-react-app, then you do the proxy in package.json. Here you do it in vite.config.ts
+      // const apiUrl = `http://localhost:5000/jobs${isHome ? '?_limit=3' : ''}`;
+      const apiUrl = `/api/jobs${isHome ? '?_limit=3' : ''}`;
 
       try {
         const response = await fetch(apiUrl);
