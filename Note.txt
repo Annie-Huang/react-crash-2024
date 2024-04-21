@@ -39,6 +39,11 @@ PS C:\react\react-crash-2024> npm i react-icons     <-- font awesome icon, mater
 PS C:\react\react-crash-2024> npm i react-router-dom
 PS C:\react\react-crash-2024> npm install -D json-server
 
+
+PS C:\react\react-crash-2024> npm run dev
+PS C:\react\react-crash-2024> npm run server
+
+
 <a> vs <Link> vs <NavLink>
     {/* <a> will do a whole page refresh
     <a
