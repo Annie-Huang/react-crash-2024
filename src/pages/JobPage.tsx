@@ -1,6 +1,12 @@
 // import { useEffect, useState } from 'react';
 import { Job } from '../components/JobListing.tsx';
-import { LoaderFunctionArgs, useLoaderData, useParams } from 'react-router-dom';
+import {
+  Link,
+  LoaderFunctionArgs,
+  useLoaderData,
+  useParams,
+} from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 // import { Spinner } from '../components/Spinner.tsx';
 
 export type JobLoaderParams = { params: { id: string } };
@@ -26,12 +32,13 @@ export const JobPage = () => {
     <>
       <section>
         <div className='container m-auto py-6 px-6'>
-          <a
-            href='/jobs.html'
+          <Link
+            to='/jobs'
             className='text-indigo-500 hover:text-indigo-600 flex items-center'
           >
-            <i className='fas fa-arrow-left mr-2'></i> Back to Job Listings
-          </a>
+            {/*<i className='fas fa-arrow-left mr-2'></i> Back to Job Listings*/}
+            <FaArrowLeft className='mr-2' /> Back to Job Listings
+          </Link>
         </div>
       </section>
 
