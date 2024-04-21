@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Job } from '../components/JobListing.tsx';
 import { useParams } from 'react-router-dom';
+import { Spinner } from '../components/Spinner.tsx';
 
 export const JobPage = () => {
   const { id } = useParams();
@@ -24,5 +25,5 @@ export const JobPage = () => {
     fetchJob();
   }, []);
 
-  return <div>JobPage</div>;
+  return loading ? <Spinner loading={loading} /> : <h1>{job?.title}</h1>;
 };
