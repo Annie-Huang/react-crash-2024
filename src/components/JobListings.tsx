@@ -17,10 +17,12 @@ export const JobListings: FC<JobListingsProps> = ({ isHome = false }) => {
 
   useEffect(() => {
     const fetchJobs = async () => {
+      const apiUrl = `http://localhost:5000/jobs${isHome ? '?_limit=3' : ''}`;
+
       try {
-        const response = await fetch('http://localhost:5000/jobs');
+        const response = await fetch(apiUrl);
         const data = await response.json();
-        setJobs(isHome ? data.slice(0, 3) : data);
+        setJobs(data);
       } catch (error) {
         console.log('Error fetching data', error);
       } finally {
