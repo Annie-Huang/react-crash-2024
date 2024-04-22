@@ -1,8 +1,31 @@
 import { useLoaderData } from 'react-router-dom';
 import { Job } from '../components/JobListing.tsx';
+import { useState } from 'react';
 
 export const EditJobPage = () => {
   const job = useLoaderData() as Job;
+
+  // https://medium.com/@bobjunior542/master-the-react-router-6-useloaderdata-hook-a-comprehensive-guide-38eca47eaf25
+  // Prevented empty states: By making data available to your components before they are rendered,
+  // you can prevent empty states from being displayed to your users.
+  // https://reactrouter.com/en/main/hooks/use-loader-data
+  const [title, setTitle] = useState<string>(job.title);
+  const [type, setType] = useState<string>(job.type);
+  const [location, setLocation] = useState<string>(job.location);
+  const [description, setDescription] = useState<string>(job.description);
+  const [salary, setSalary] = useState<string>(job.salary);
+  const [companyName, setCompanyName] = useState<string>(job.company.name);
+  const [companyDescription, setCompanyDescription] = useState<string>(
+    job.company.description
+  );
+  const [contactEmail, setContactEmail] = useState<string>(
+    job.company.contactEmail
+  );
+  const [contactPhone, setContactPhone] = useState<string>(
+    job.company.contactPhone
+  );
+
+  const submitForm = () => {};
 
   return (
     <section className='bg-indigo-50'>

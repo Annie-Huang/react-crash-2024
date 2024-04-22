@@ -11,6 +11,7 @@ https://vitejs.dev/config/server-options.html#server-proxy
 
 https://reactrouter.com/en/main/route/loader
 https://reactrouter.com/en/main/hooks/use-loader-data
+https://medium.com/@bobjunior542/master-the-react-router-6-useloaderdata-hook-a-comprehensive-guide-38eca47eaf25
 
 ------------------------------------------------------------------
 
