@@ -12,7 +12,7 @@ import { jobLoader, JobPage } from './pages/JobPage.tsx';
 import { AddJobPage, NewJob } from './pages/AddJobPage.tsx';
 
 const App = () => {
-  // Add new job
+  // Add New Job
   const addJob = async (newJob: NewJob) => {
     const response = await fetch('/api/jobs', {
       method: 'POST',
@@ -24,13 +24,20 @@ const App = () => {
     return;
   };
 
+  // Delete Job
+  const deleteJob = async (id: string) => {};
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path='/jobs' element={<JobsPage />} />
         <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
-        <Route path='/jobs/:id' element={<JobPage />} loader={jobLoader} />
+        <Route
+          path='/jobs/:id'
+          element={<JobPage deleteJob={deleteJob} />}
+          loader={jobLoader}
+        />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     )

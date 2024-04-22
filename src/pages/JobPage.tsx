@@ -7,6 +7,7 @@ import {
   // useParams,
 } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
+import { FC } from 'react';
 // import { Spinner } from '../components/Spinner.tsx';
 
 export type JobLoaderParams = { params: { id: string } };
@@ -22,7 +23,11 @@ export const jobLoader = async ({ params }: LoaderFunctionArgs) => {
   return data;
 };
 
-export const JobPage = () => {
+export interface JobPageProps {
+  deleteJob: (id: string) => void;
+}
+
+export const JobPage: FC<JobPageProps> = ({ deleteJob }) => {
   // const { id } = useParams();
 
   // https://reactrouter.com/en/main/hooks/use-loader-data
