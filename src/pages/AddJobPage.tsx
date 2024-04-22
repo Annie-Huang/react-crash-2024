@@ -2,10 +2,10 @@ import { FC, SyntheticEvent, useState } from 'react';
 import { Job } from '../components/JobListing.tsx';
 import { useNavigate } from 'react-router-dom';
 
-export type DraftJob = Omit<Job, 'id'>;
+export type NewJob = Omit<Job, 'id'>;
 
 export interface AddJobPageProps {
-  addJobSubmit: (job: DraftJob) => void;
+  addJobSubmit: (job: NewJob) => void;
 }
 
 export const AddJobPage: FC<AddJobPageProps> = ({ addJobSubmit }) => {

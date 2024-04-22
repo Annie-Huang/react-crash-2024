@@ -9,10 +9,20 @@ import { MainLayout } from './layouts/MainLayout.tsx';
 import { JobsPage } from './pages/JobsPage.tsx';
 import { NotFoundPage } from './pages/NotFoundPage.tsx';
 import { jobLoader, JobPage } from './pages/JobPage.tsx';
-import { AddJobPage, DraftJob } from './pages/AddJobPage.tsx';
+import { AddJobPage, NewJob } from './pages/AddJobPage.tsx';
 
 const App = () => {
-  const addJob = (newJob: DraftJob) => {};
+  // Add new job
+  const addJob = async (newJob: NewJob) => {
+    const response = await fetch('/api/jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newJob),
+    });
+    return;
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
