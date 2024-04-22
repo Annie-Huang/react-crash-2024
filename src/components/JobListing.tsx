@@ -3,7 +3,7 @@ import { FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export type Job = {
-  id: string;
+  id?: string;
   type: string;
   title: string;
   description: string;

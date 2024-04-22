@@ -3,10 +3,8 @@ import { Job } from '../components/JobListing.tsx';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-export type NewJob = Omit<Job, 'id'>;
-
 export interface AddJobPageProps {
-  addJobSubmit: (job: NewJob) => void;
+  addJobSubmit: (job: Job) => void;
 }
 
 export const AddJobPage: FC<AddJobPageProps> = ({ addJobSubmit }) => {

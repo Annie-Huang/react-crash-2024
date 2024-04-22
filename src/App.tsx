@@ -9,12 +9,13 @@ import { MainLayout } from './layouts/MainLayout.tsx';
 import { JobsPage } from './pages/JobsPage.tsx';
 import { NotFoundPage } from './pages/NotFoundPage.tsx';
 import { jobLoader, JobPage } from './pages/JobPage.tsx';
-import { AddJobPage, NewJob } from './pages/AddJobPage.tsx';
+import { AddJobPage } from './pages/AddJobPage.tsx';
 import { EditJobPage } from './pages/EditJobPage.tsx';
+import { Job } from './components/JobListing.tsx';
 
 const App = () => {
   // Add New Job
-  const addJob = async (newJob: NewJob) => {
+  const addJob = async (newJob: Job) => {
     const response = await fetch('/api/jobs', {
       method: 'POST',
       headers: {
