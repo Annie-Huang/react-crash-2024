@@ -16,7 +16,8 @@ import { Job } from './components/JobListing.tsx';
 const App = () => {
   // Add New Job
   const addJob = async (newJob: Job) => {
-    const response = await fetch('/api/jobs', {
+    // const response = await fetch('/api/jobs', {
+    await fetch('/api/jobs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,7 +29,8 @@ const App = () => {
 
   // Delete Job
   const deleteJob = async (id: string) => {
-    const response = await fetch(`/api/jobs/${id}`, {
+    // const response = await fetch(`/api/jobs/${id}`, {
+    await fetch(`/api/jobs/${id}`, {
       method: 'DELETE',
     });
     return;
