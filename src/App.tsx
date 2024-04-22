@@ -10,6 +10,7 @@ import { JobsPage } from './pages/JobsPage.tsx';
 import { NotFoundPage } from './pages/NotFoundPage.tsx';
 import { jobLoader, JobPage } from './pages/JobPage.tsx';
 import { AddJobPage, NewJob } from './pages/AddJobPage.tsx';
+import { EditJobPage } from './pages/EditJobPage.tsx';
 
 const App = () => {
   // Add New Job
@@ -38,6 +39,11 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path='/jobs' element={<JobsPage />} />
         <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
+        <Route
+          path='/edit-job/:id'
+          element={<EditJobPage />}
+          loader={jobLoader}
+        />
         <Route
           path='/jobs/:id'
           element={<JobPage deleteJob={deleteJob} />}
