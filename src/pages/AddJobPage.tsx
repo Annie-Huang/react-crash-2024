@@ -1,6 +1,12 @@
-import { SyntheticEvent, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
+import { Job } from '../components/JobListing.tsx';
+import { useNavigate } from 'react-router-dom';
 
-export const AddJobPage = () => {
+export interface AddJobPageProps {
+  addJobSubmit: (job: Omit<Job, 'id'>) => void;
+}
+
+export const AddJobPage: FC<AddJobPageProps> = ({ addJobSubmit }) => {
   const [title, setTitle] = useState<string>('');
   const [type, setType] = useState<string>('Full-Time');
   const [location, setLocation] = useState<string>('');
@@ -10,6 +16,8 @@ export const AddJobPage = () => {
   const [companyDescription, setCompanyDescription] = useState<string>('');
   const [contactEmail, setContactEmail] = useState<string>('');
   const [contactPhone, setContactPhone] = useState<string>('');
+
+  const navigate = useNavigate();
 
   // https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/
   // const submitForm = (e: FormEvent<HTMLFormElement>) => {
@@ -29,7 +37,9 @@ export const AddJobPage = () => {
         contactPhone,
       },
     };
-    console.log(newJob);
+    addJobSubmit(newJob);
+
+    return navigate('/jobs');
   };
 
   return (
