@@ -25,7 +25,7 @@ export const jobLoader = async ({ params }: LoaderFunctionArgs) => {
 };
 
 export interface JobPageProps {
-  deleteJob: (jobId: string) => void;
+  deleteJob: (id: string) => void;
 }
 
 export const JobPage: FC<JobPageProps> = ({ deleteJob }) => {
