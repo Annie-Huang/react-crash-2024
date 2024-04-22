@@ -4,6 +4,7 @@ import {
   Link,
   LoaderFunctionArgs,
   useLoaderData,
+  useNavigate,
   // useParams,
 } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
@@ -24,14 +25,25 @@ export const jobLoader = async ({ params }: LoaderFunctionArgs) => {
 };
 
 export interface JobPageProps {
-  deleteJob: (id: string) => void;
+  deleteJob: (jobId: string) => void;
 }
 
 export const JobPage: FC<JobPageProps> = ({ deleteJob }) => {
   // const { id } = useParams();
+  const navigate = useNavigate();
 
   // https://reactrouter.com/en/main/hooks/use-loader-data
   const job = useLoaderData() as Job;
+
+  const onDeleteClick = (jobId: string) => {
+    const confirm = window.confirm(
+      'Are you sure you want to delete this job listing?'
+    );
+    if (!confirm) return;
+
+    deleteJob(jobId);
+    navigate('/jobs');
+  };
 
   // Template in https://github.com/bradtraversy/react-crash-2024/blob/main/_theme_files/job.html
   return (
@@ -108,7 +120,10 @@ export const JobPage: FC<JobPageProps> = ({ deleteJob }) => {
                 >
                   Edit Job
                 </Link>
-                <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'>
+                <button
+                  onClick={() => onDeleteClick(job.id)}
+                  className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block'
+                >
                   Delete Job
                 </button>
               </div>

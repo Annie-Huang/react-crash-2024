@@ -25,7 +25,9 @@ const App = () => {
   };
 
   // Delete Job
-  const deleteJob = async (id: string) => {};
+  const deleteJob = async (jobId: string) => {
+    console.log(jobId);
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
