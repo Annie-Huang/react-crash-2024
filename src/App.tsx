@@ -15,14 +15,14 @@ import { Job } from './components/JobListing.tsx';
 
 const App = () => {
   // Add New Job
-  const addJob = async (newJob: Job) => {
+  const addJob = async (job: Job) => {
     // const response = await fetch('/api/jobs', {
     await fetch('/api/jobs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newJob),
+      body: JSON.stringify(job),
     });
     return;
   };
@@ -36,6 +36,18 @@ const App = () => {
     return;
   };
 
+  // Update Job
+  const updateJob = async (job: Job) => {
+    await fetch(`/api/jobs/${job.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(job),
+    });
+    return;
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout />}>
@@ -44,7 +56,7 @@ const App = () => {
         <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob} />} />
         <Route
           path='/edit-job/:id'
-          element={<EditJobPage />}
+          element={<EditJobPage updateJobSubmit={updateJob} />}
           loader={jobLoader}
         />
         <Route
