@@ -1,9 +1,16 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { Job } from '../components/JobListing.tsx';
-import { useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
+import { toast } from 'react-toastify';
 
-export const EditJobPage = () => {
+export interface EditJobPageProps {
+  updateJobSubmit: (job: Job) => void;
+}
+
+export const EditJobPage: FC<EditJobPageProps> = ({ updateJobSubmit }) => {
   const job = useLoaderData() as Job;
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   // https://medium.com/@bobjunior542/master-the-react-router-6-useloaderdata-hook-a-comprehensive-guide-38eca47eaf25
   // Prevented empty states: By making data available to your components before they are rendered,
@@ -25,7 +32,29 @@ export const EditJobPage = () => {
     job.company.contactPhone
   );
 
-  const submitForm = () => {};
+  const submitForm = (e: SyntheticEvent) => {
+    e.preventDefault();
+
+    const updatedJob = {
+      id,
+      title,
+      type,
+      location,
+      description,
+      salary,
+      company: {
+        name: companyName,
+        description: companyDescription,
+        contactEmail,
+        contactPhone,
+      },
+    };
+    updateJobSubmit(updatedJob);
+
+    toast.success('Job Updated successfully');
+
+    return navigate(`/jobs/${job.id}`);
+  };
 
   return (
     <section className='bg-indigo-50'>
