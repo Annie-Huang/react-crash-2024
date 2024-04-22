@@ -1,3 +1,8 @@
+import { useLoaderData } from 'react-router-dom';
+import { Job } from '../components/JobListing.tsx';
+
 export const EditJobPage = () => {
-  return <div>Edit Job</div>;
+  const job = useLoaderData() as Job;
+
+  return <div>{job.title}</div>;
 };
