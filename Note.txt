@@ -45,7 +45,7 @@ PS C:\react\react-crash-2024> npm i react-icons     <-- font awesome icon, mater
 PS C:\react\react-crash-2024> npm i react-router-dom
 PS C:\react\react-crash-2024> npm install -D json-server
 PS C:\react\react-crash-2024> npm i react-spinners
-
+PS C:\react\react-crash-2024> npm i react-toastify
 
 PS C:\react\react-crash-2024> npm run dev
 PS C:\react\react-crash-2024> npm run server
