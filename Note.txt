@@ -51,6 +51,8 @@ PS C:\react\react-crash-2024> npm i react-toastify
 PS C:\react\react-crash-2024> npm run dev
 PS C:\react\react-crash-2024> npm run server
 
+PS C:\react\react-crash-2024> npm run build     <-- create dist folder
+PS C:\react\react-crash-2024> npm run preview   <-- preview the build
 
 <a> vs <Link> vs <NavLink>
     {/* <a> will do a whole page refresh
