@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { FC } from 'react';
+import { toast } from 'react-toastify';
 // import { Spinner } from '../components/Spinner.tsx';
 
 export type JobLoaderParams = { params: { id: string } };
@@ -42,6 +43,9 @@ export const JobPage: FC<JobPageProps> = ({ deleteJob }) => {
     if (!confirm) return;
 
     deleteJob(jobId);
+
+    toast.success('Job deleted successfully');
+
     navigate('/jobs');
   };
 

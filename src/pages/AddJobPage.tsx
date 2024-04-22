@@ -1,6 +1,7 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { Job } from '../components/JobListing.tsx';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export type NewJob = Omit<Job, 'id'>;
 
@@ -40,6 +41,8 @@ export const AddJobPage: FC<AddJobPageProps> = ({ addJobSubmit }) => {
       },
     };
     addJobSubmit(newJob);
+
+    toast.success('Job Added successfully');
 
     return navigate('/jobs');
   };
