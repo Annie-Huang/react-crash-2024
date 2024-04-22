@@ -1,11 +1,11 @@
-import { FormEvent, SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 
 export const AddJobPage = () => {
   const [title, setTitle] = useState<string>('');
-  const [type, setType] = useState<string>('');
+  const [type, setType] = useState<string>('Full-Time');
   const [location, setLocation] = useState<string>('');
   const [description, setDescription] = useState<string>('');
-  const [salary, setSalary] = useState<string>('');
+  const [salary, setSalary] = useState<string>('Under $50K');
   const [companyName, setCompanyName] = useState<string>('');
   const [companyDescription, setCompanyDescription] = useState<string>('');
   const [contactEmail, setContactEmail] = useState<string>('');
